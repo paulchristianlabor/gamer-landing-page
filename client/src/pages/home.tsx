@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Play, Users, Gamepad2, Twitch, Youtube, Twitter, DiscIcon as Discord, ChevronRight } from "lucide-react";
+import { Play, Users, Gamepad2, Facebook, ChevronRight } from "lucide-react";
 
 import heroBg from "@/assets/images/hero-bg.png";
 import gamerProfile from "@/assets/images/gamer-profile.png";
@@ -13,7 +13,7 @@ import video1 from "@/assets/images/video-1.png";
 import video2 from "@/assets/images/video-2.png";
 import video3 from "@/assets/images/video-3.png";
 
-const GAMER_NAME = "NEXUS";
+const GAMER_NAME = "Choo Bontoii";
 
 export default function Home() {
   return (
@@ -40,7 +40,7 @@ export default function Home() {
             className="mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/10 backdrop-blur-md"
           >
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-sm md:text-base font-semibold text-primary uppercase tracking-wider">Live Now on Twitch</span>
+            <span className="text-sm md:text-base font-semibold text-primary uppercase tracking-wider">New Content Daily</span>
           </motion.div>
 
           <motion.h1 
@@ -61,7 +61,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-lg md:text-2xl text-muted-foreground mb-10 max-w-2xl font-medium"
           >
-            Top-tier gameplay, epic highlights, and the most toxic-free gaming community on the internet.
+            Gaming content, highlights, and community. Join the journey from the very beginning.
           </motion.p>
 
           <motion.div 
@@ -120,23 +120,23 @@ export default function Home() {
               className="w-full lg:w-1/2 space-y-6 text-center lg:text-left"
             >
               <h2 className="text-4xl md:text-5xl font-bold font-display text-white">
-                MEET THE <span className="text-primary">LEGEND</span>
+                THE <span className="text-primary">JOURNEY</span> BEGINS
               </h2>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                What started as a casual hobby turned into a full-blown obsession. I'm {GAMER_NAME}, a competitive player and content creator dedicated to pushing the limits of what's possible in gaming.
+                I'm {GAMER_NAME}, a gaming enthusiast just starting out on this epic quest. I'm here to share my passion for gaming, build a community, and have a blast while doing it.
               </p>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Whether I'm clutching a 1v4 in my favorite shooter or exploring massive open worlds, I bring high energy, tactical gameplay, and good vibes to every stream.
+                Expect high energy, genuine reactions, and a community that grows together. No pro-league pressure here—just pure gaming fun.
               </p>
               
               <div className="pt-6 flex justify-center lg:justify-start gap-4">
                 <div className="glass-card p-4 flex-1 max-w-[160px] text-center border-l-4 border-l-primary">
-                  <h3 className="text-3xl font-black font-display text-white">1.2M</h3>
-                  <p className="text-sm text-primary uppercase font-bold tracking-wider">Subscribers</p>
+                  <h3 className="text-3xl font-black font-display text-white">START</h3>
+                  <p className="text-sm text-primary uppercase font-bold tracking-wider">The Mission</p>
                 </div>
                 <div className="glass-card p-4 flex-1 max-w-[160px] text-center border-l-4 border-l-secondary">
-                  <h3 className="text-3xl font-black font-display text-white">5K+</h3>
-                  <p className="text-sm text-secondary uppercase font-bold tracking-wider">Hours Streamed</p>
+                  <h3 className="text-3xl font-black font-display text-white">DAILY</h3>
+                  <p className="text-sm text-secondary uppercase font-bold tracking-wider">Content Drops</p>
                 </div>
               </div>
             </motion.div>
@@ -150,18 +150,18 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-bold font-display mb-4">
-              MAIN <span className="text-secondary neon-text-secondary">ARENAS</span>
+              CURRENT <span className="text-secondary neon-text-secondary">GAMES</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              The battlegrounds where I spend most of my time dominating and creating content.
+              The titles I'm currently playing and exploring.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: "TACTICAL FPS", desc: "Clutch moments and pixel-perfect aim.", img: gameFps, color: "group-hover:border-primary" },
-              { title: "BATTLE ROYALE", desc: "Surviving the chaos and taking the crown.", img: gameBr, color: "group-hover:border-accent" },
-              { title: "ACTION RPG", desc: "Epic quests, boss fights, and min-maxing.", img: gameRpg, color: "group-hover:border-secondary" }
+              { title: "TACTICAL FPS", desc: "Learning the maps and mastering the aim.", img: gameFps, color: "group-hover:border-primary" },
+              { title: "BATTLE ROYALE", desc: "Dropping in and surviving the chaos.", img: gameBr, color: "group-hover:border-accent" },
+              { title: "ACTION RPG", desc: "Exploring worlds and leveling up my gear.", img: gameRpg, color: "group-hover:border-secondary" }
             ].map((game, i) => (
               <motion.div
                 key={i}
@@ -201,10 +201,10 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
             <div>
               <h2 className="text-4xl md:text-6xl font-bold font-display mb-4">
-                RECENT <span className="text-primary neon-text-primary">DROPS</span>
+                LATEST <span className="text-primary neon-text-primary">CLIPS</span>
               </h2>
               <p className="text-lg text-muted-foreground max-w-xl">
-                Check out the latest highlights, full gameplays, and stream VODs.
+                Check out my most recent gameplay moments and highlights.
               </p>
             </div>
             <Button variant="ghost" className="hover:text-primary group">
@@ -214,9 +214,9 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: "THE MOST INSANE 1V5 CLUTCH!", views: "142K", time: "2 days ago", img: video1 },
-              { title: "NEW SEASON UPDATE REVIEW", views: "89K", time: "4 days ago", img: video2 },
-              { title: "ROAD TO MAX RANK - EP 12", views: "210K", time: "1 week ago", img: video3 }
+              { title: "FIRST WIN OF THE DAY!", views: "New", time: "Just now", img: video1 },
+              { title: "TRYING OUT NEW GEAR", views: "Recent", time: "Yesterday", img: video2 },
+              { title: "LEVELING UP FAST", views: "Trending", time: "2 days ago", img: video3 }
             ].map((video, i) => (
               <motion.div
                 key={i}
@@ -237,13 +237,10 @@ export default function Home() {
                       <Play className="w-8 h-8 text-black fill-current ml-1" />
                     </div>
                   </div>
-                  <div className="absolute bottom-3 right-3 bg-black/80 px-2 py-1 text-xs font-bold rounded backdrop-blur">
-                    14:20
-                  </div>
                 </div>
                 <h3 className="text-xl font-bold font-display leading-tight mb-2 group-hover:text-primary transition-colors">{video.title}</h3>
                 <div className="flex items-center text-sm text-muted-foreground space-x-3">
-                  <span>{video.views} views</span>
+                  <span>{video.views}</span>
                   <span className="w-1 h-1 rounded-full bg-white/30" />
                   <span>{video.time}</span>
                 </div>
@@ -265,24 +262,14 @@ export default function Home() {
               JOIN THE <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">SQUAD</span>
             </h2>
             <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
-              Get notified when I go live, enter exclusive giveaways, and connect with other gamers in our Discord.
+              Follow my Facebook page to see when I go live and join our growing community.
             </p>
             
-            <form className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto" onSubmit={(e) => e.preventDefault()}>
-              <Input 
-                type="email" 
-                placeholder="ENTER YOUR EMAIL..." 
-                className="h-14 bg-black/50 border-white/10 text-white placeholder:text-white/40 rounded-none focus-visible:ring-primary font-display tracking-widest text-lg"
-              />
-              <Button type="submit" size="lg" className="h-14 rounded-none bg-primary hover:bg-primary/90 text-black font-bold px-8 skew-x-[-10deg] neon-glow-primary">
-                <div className="skew-x-[10deg]">SUBSCRIBE</div>
-              </Button>
-            </form>
-            
-            <div className="mt-12 pt-12 border-t border-white/10 flex flex-col items-center">
-              <p className="text-sm text-muted-foreground uppercase tracking-widest font-bold mb-6">Or join directly</p>
-              <Button variant="outline" size="lg" className="h-14 rounded-none border-[#5865F2] text-[#5865F2] hover:bg-[#5865F2] hover:text-white transition-all duration-300 w-full max-w-xs group">
-                <Discord className="w-6 h-6 mr-3 group-hover:animate-bounce" /> JOIN DISCORD SERVER
+            <div className="flex flex-col items-center gap-6">
+              <Button size="lg" className="h-14 rounded-none bg-[#1877F2] hover:bg-[#1877F2]/90 text-white font-bold px-12 skew-x-[-10deg] shadow-[0_0_20px_rgba(24,119,242,0.4)] transition-all duration-300 hover:scale-105">
+                <div className="skew-x-[10deg] flex items-center gap-3 text-lg">
+                  <Facebook className="w-6 h-6 fill-current" /> FOLLOW ON FACEBOOK
+                </div>
               </Button>
             </div>
           </div>
@@ -292,32 +279,25 @@ export default function Home() {
       {/* FOOTER */}
       <footer className="border-t border-white/10 py-12 bg-black/50 relative z-10">
         <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="text-2xl font-black font-display tracking-tighter">
-            NEXUS<span className="text-primary">.GG</span>
+          <div className="text-2xl font-black font-display tracking-tighter uppercase">
+            {GAMER_NAME}
           </div>
           
           <div className="flex gap-4">
-            {[
-              { icon: <Youtube className="w-5 h-5" />, color: "hover:bg-[#FF0000] hover:border-[#FF0000]" },
-              { icon: <Twitch className="w-5 h-5" />, color: "hover:bg-[#9146FF] hover:border-[#9146FF]" },
-              { icon: <Twitter className="w-5 h-5" />, color: "hover:bg-[#1DA1F2] hover:border-[#1DA1F2]" },
-              { icon: <Discord className="w-5 h-5" />, color: "hover:bg-[#5865F2] hover:border-[#5865F2]" }
-            ].map((social, i) => (
-              <a 
-                key={i} 
-                href="#" 
-                className={`w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-muted-foreground hover:text-white transition-all duration-300 ${social.color}`}
-              >
-                {social.icon}
-              </a>
-            ))}
+            <a 
+              href="#" 
+              className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-muted-foreground hover:text-white transition-all duration-300 hover:bg-[#1877F2] hover:border-[#1877F2]"
+            >
+              <Facebook className="w-5 h-5 fill-current" />
+            </a>
           </div>
           
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} {GAMER_NAME} Gaming. All rights reserved.
+            &copy; {new Date().getFullYear()} {GAMER_NAME}. All rights reserved.
           </p>
         </div>
       </footer>
     </div>
   );
 }
+
