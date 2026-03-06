@@ -6,12 +6,7 @@ import { Play, Users, Gamepad2, Facebook, ChevronRight } from "lucide-react";
 
 import heroBg from "@/assets/images/hero-bg.png";
 import gamerProfile from "@/assets/images/gamer-profile.png";
-import gameFps from "@/assets/images/game-fps.png";
-import gameBr from "@/assets/images/game-br.png";
-import gameRpg from "@/assets/images/game-rpg.png";
-import video1 from "@/assets/images/video-1.png";
-import video2 from "@/assets/images/video-2.png";
-import video3 from "@/assets/images/video-3.png";
+import gamesCollage from "@/assets/images/games-collage.png";
 
 const GAMER_NAME = "Choo Bontoii";
 
@@ -150,18 +145,18 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-bold font-display mb-4">
-              CURRENT <span className="text-secondary neon-text-secondary">GAMES</span>
+              FAVORITE <span className="text-secondary neon-text-secondary">TITLES</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              The titles I'm currently playing and exploring.
+              The games that fuel my passion and where the most epic moments happen.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: "TACTICAL FPS", desc: "Learning the maps and mastering the aim.", img: gameFps, color: "group-hover:border-primary" },
-              { title: "BATTLE ROYALE", desc: "Dropping in and surviving the chaos.", img: gameBr, color: "group-hover:border-accent" },
-              { title: "ACTION RPG", desc: "Exploring worlds and leveling up my gear.", img: gameRpg, color: "group-hover:border-secondary" }
+              { title: "LEGENDS ARENA", desc: "Intense MOBA battles in Mobile Legends & DOTA 2.", color: "group-hover:border-primary" },
+              { title: "WARFARE OPS", desc: "Tactical strategy in COC and high-octane action in COD.", color: "group-hover:border-accent" },
+              { title: "REALM QUESTS", desc: "Epic adventures in Dragon Nest and classic MMORPGs.", color: "group-hover:border-secondary" }
             ].map((game, i) => (
               <motion.div
                 key={i}
@@ -175,7 +170,7 @@ export default function Home() {
                   <div className="relative h-64 overflow-hidden">
                     <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors z-10" />
                     <img 
-                      src={game.img} 
+                      src={gamesCollage} 
                       alt={game.title} 
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
@@ -195,62 +190,57 @@ export default function Home() {
         </div>
       </section>
 
-      {/* LATEST VIDEOS SECTION */}
-      <section className="py-24 relative">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-            <div>
-              <h2 className="text-4xl md:text-6xl font-bold font-display mb-4">
-                LATEST <span className="text-primary neon-text-primary">CLIPS</span>
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-xl">
-                Check out my most recent gameplay moments and highlights.
-              </p>
+      {/* JOIN SQUAD SECTION */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-secondary/10" />
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
+          <div className="glass-card max-w-4xl mx-auto p-8 md:p-16 rounded-3xl border-primary/20 text-center relative overflow-hidden">
+            <div className="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-primary/20 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-64 h-64 bg-secondary/20 rounded-full blur-3xl" />
+            
+            <h2 className="text-4xl md:text-5xl font-black font-display mb-6">
+              JOIN THE <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">SQUAD</span>
+            </h2>
+            <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
+              Follow my Facebook page to see when I go live and join our growing community.
+            </p>
+            
+            <div className="flex flex-col items-center gap-6">
+              <Button size="lg" className="h-14 rounded-none bg-[#1877F2] hover:bg-[#1877F2]/90 text-white font-bold px-12 skew-x-[-10deg] shadow-[0_0_20px_rgba(24,119,242,0.4)] transition-all duration-300 hover:scale-105">
+                <div className="skew-x-[10deg] flex items-center gap-3 text-lg">
+                  <Facebook className="w-6 h-6 fill-current" /> FOLLOW ON FACEBOOK
+                </div>
+              </Button>
             </div>
-            <Button variant="ghost" className="hover:text-primary group">
-              VIEW ALL <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-            </Button>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { title: "FIRST WIN OF THE DAY!", views: "New", time: "Just now", img: video1 },
-              { title: "TRYING OUT NEW GEAR", views: "Recent", time: "Yesterday", img: video2 },
-              { title: "LEVELING UP FAST", views: "Trending", time: "2 days ago", img: video3 }
-            ].map((video, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="group cursor-pointer block"
-              >
-                <div className="relative aspect-video rounded-lg overflow-hidden border border-white/10 mb-4">
-                  <img 
-                    src={video.img} 
-                    alt={video.title} 
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-black/50 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                    <div className="w-16 h-16 rounded-full bg-primary/80 backdrop-blur flex items-center justify-center opacity-0 scale-50 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 shadow-[0_0_20px_rgba(var(--primary),0.5)]">
-                      <Play className="w-8 h-8 text-black fill-current ml-1" />
-                    </div>
-                  </div>
-                </div>
-                <h3 className="text-xl font-bold font-display leading-tight mb-2 group-hover:text-primary transition-colors">{video.title}</h3>
-                <div className="flex items-center text-sm text-muted-foreground space-x-3">
-                  <span>{video.views}</span>
-                  <span className="w-1 h-1 rounded-full bg-white/30" />
-                  <span>{video.time}</span>
-                </div>
-              </motion.div>
-            ))}
           </div>
         </div>
       </section>
 
-      {/* JOIN SQUAD SECTION */}
+      {/* FOOTER */}
+      <footer className="border-t border-white/10 py-12 bg-black/50 relative z-10">
+        <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="text-2xl font-black font-display tracking-tighter uppercase">
+            {GAMER_NAME}
+          </div>
+          
+          <div className="flex gap-4">
+            <a 
+              href="#" 
+              className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-muted-foreground hover:text-white transition-all duration-300 hover:bg-[#1877F2] hover:border-[#1877F2]"
+            >
+              <Facebook className="w-5 h-5 fill-current" />
+            </a>
+          </div>
+          
+          <p className="text-sm text-muted-foreground">
+            &copy; {new Date().getFullYear()} {GAMER_NAME}. All rights reserved.
+          </p>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-secondary/10" />
         <div className="container mx-auto px-4 md:px-6 relative z-10">
