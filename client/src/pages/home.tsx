@@ -147,7 +147,7 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-bold font-display mb-4">
-              FAVORITE <span className="text-secondary neon-text-secondary">TITLES</span>
+              GAMES I <span className="text-secondary neon-text-secondary">PLAY</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               The games that fuel my passion and where the most epic moments happen.
