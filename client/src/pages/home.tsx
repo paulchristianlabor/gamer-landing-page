@@ -6,7 +6,9 @@ import { Play, Users, Gamepad2, Facebook, ChevronRight } from "lucide-react";
 
 import heroBg from "@/assets/images/hero-bg.png";
 import gamerProfile from "@/assets/images/gamer-profile.png";
-import gamesCollage from "@/assets/images/games-collage.png";
+import gameLegendsArena from "@/assets/images/game-legends-arena.png";
+import gameWarfareOps from "@/assets/images/game-warfare-ops.png";
+import gameRealmQuests from "@/assets/images/game-realm-quests.png";
 
 const GAMER_NAME = "Choo Bontoii";
 
@@ -154,9 +156,9 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: "LEGENDS ARENA", desc: "Intense MOBA battles in Mobile Legends & DOTA 2.", color: "group-hover:border-primary" },
-              { title: "WARFARE OPS", desc: "Tactical strategy in COC and high-octane action in COD.", color: "group-hover:border-accent" },
-              { title: "REALM QUESTS", desc: "Epic adventures in Dragon Nest and classic MMORPGs.", color: "group-hover:border-secondary" }
+              { title: "LEGENDS ARENA", desc: "Intense MOBA battles in Mobile Legends & DOTA 2.", img: gameLegendsArena, color: "group-hover:border-primary" },
+              { title: "WARFARE OPS", desc: "Tactical strategy in COC and high-octane action in COD.", img: gameWarfareOps, color: "group-hover:border-accent" },
+              { title: "REALM QUESTS", desc: "Epic adventures in Dragon Nest and classic MMORPGs.", img: gameRealmQuests, color: "group-hover:border-secondary" }
             ].map((game, i) => (
               <motion.div
                 key={i}
@@ -170,7 +172,7 @@ export default function Home() {
                   <div className="relative h-64 overflow-hidden">
                     <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors z-10" />
                     <img 
-                      src={gamesCollage} 
+                      src={game.img} 
                       alt={game.title} 
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
