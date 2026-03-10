@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Play, Users, Gamepad2, Facebook, ChevronRight } from "lucide-react";
+import { Play, Users, Gamepad2, Facebook, Youtube, Twitch, Twitter, ChevronRight } from "lucide-react";
 
 import heroBg from "@/assets/images/hero-bg.png";
 import gamerProfile from "@/assets/images/gamer-profile.png";
@@ -10,7 +10,7 @@ import gameLegendsArena from "@/assets/images/game-legends-arena.png";
 import gameWarfareOps from "@/assets/images/game-warfare-ops.png";
 import gameRealmQuests from "@/assets/images/game-realm-quests.png";
 
-const GAMER_NAME = "Choo Bontoii";
+const GAMER_NAME = "Gamer";
 
 export default function Home() {
   return (
@@ -226,12 +226,20 @@ export default function Home() {
           </div>
           
           <div className="flex gap-4">
-            <a 
-              href="#" 
-              className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-muted-foreground hover:text-white transition-all duration-300 hover:bg-[#1877F2] hover:border-[#1877F2]"
-            >
-              <Facebook className="w-5 h-5 fill-current" />
-            </a>
+            {[
+              { icon: <Facebook className="w-5 h-5 fill-current" />, color: "hover:bg-[#1877F2] hover:border-[#1877F2]" },
+              { icon: <Youtube className="w-5 h-5" />, color: "hover:bg-[#FF0000] hover:border-[#FF0000]" },
+              { icon: <Twitch className="w-5 h-5" />, color: "hover:bg-[#9146FF] hover:border-[#9146FF]" },
+              { icon: <Twitter className="w-5 h-5" />, color: "hover:bg-white hover:border-white hover:text-black" },
+            ].map((social, i) => (
+              <a 
+                key={i} 
+                href="#" 
+                className={`w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-muted-foreground transition-all duration-300 ${social.color}`}
+              >
+                {social.icon}
+              </a>
+            ))}
           </div>
           
           <p className="text-sm text-muted-foreground">
