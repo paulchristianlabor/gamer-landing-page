@@ -59,6 +59,37 @@ app.use((req, res, next) => {
   next();
 });
 
+function getServerHost() {
+  if (process.env.HOST) {
+    return process.env.HOST;
+  }
+
+  return process.env.NODE_ENV === "production" ? "0.0.0.0" : "127.0.0.1";
+}
+
+function startServer(port: number, host: string) {
+  httpServer.once("error", (err: NodeJS.ErrnoException) => {
+    if (err.code === "EADDRINUSE" && process.env.PORT === undefined) {
+      const nextPort = port + 1;
+      log(`port ${port} is in use, retrying on ${nextPort}`);
+      startServer(nextPort, host);
+      return;
+    }
+
+    throw err;
+  });
+
+  httpServer.listen(
+    {
+      port,
+      host,
+    },
+    () => {
+      log(`serving on http://${host}:${port}`);
+    },
+  );
+}
+
 (async () => {
   await registerRoutes(httpServer, app);
 
@@ -90,14 +121,6 @@ app.use((req, res, next) => {
   // this serves both the API and the client.
   // It is the only port that is not firewalled.
   const port = parseInt(process.env.PORT || "5000", 10);
-  httpServer.listen(
-    {
-      port,
-      host: "0.0.0.0",
-      reusePort: true,
-    },
-    () => {
-      log(`serving on port ${port}`);
-    },
-  );
+  const host = getServerHost();
+  startServer(port, host);
 })();
