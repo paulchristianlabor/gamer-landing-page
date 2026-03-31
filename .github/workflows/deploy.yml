@@ -39,8 +39,13 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Copy custom domain
-        run: cp CNAME dist/public/CNAME
+      - name: Ensure custom domain
+        run: |
+          if [ -f CNAME ]; then
+            cp CNAME dist/public/CNAME
+          else
+            echo "gamer.paulchristianlabor.com" > dist/public/CNAME
+          fi
 
       - name: Disable Jekyll
         run: touch dist/public/.nojekyll
