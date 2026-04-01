@@ -13,13 +13,11 @@ server/public/
 .env.production.local
 
 # Logs
-npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
 # Cache
-.npm/
 .pnpm-store/
 .vite/
 

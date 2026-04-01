@@ -5,22 +5,20 @@ description: Guidelines for using RevenueCat to integrate payments in mobile app
 # Note: ./references/replit-revenuecat-v2-docs.md is copy-pasted manually from https://github.com/replit/replit-revenuecat-v2/blob/main/docs/SDK.ts and was last updated: 2026-02-12 for version 2.0.2
 ---
 
-
 ## Introduction
 
 - RevenueCat lets users monetize their native mobile apps on Replit.
 - The RevenueCat integration is only intended to be used for the Expo/mobile stack on Replit.
-- If the stack used is *not* Expo/mobile, do not use RevenueCat, and instead suggest the Stripe integration.
+- If the stack used is _not_ Expo/mobile, do not use RevenueCat, and instead suggest the Stripe integration.
 - The package used in the React Native client code is `react-native-purchases`. Always download the version that is compatible with the version of React Native/Expo used in the app.
 
 ## Prerequisites
 
 1. These packages must be installed in the workspace root package.json:
-    - `react-native-purchases` - Official client-side SDK for React Native. This should be used on the client.
-    - `replit-revenuecat-v2` - SDK for RevenueCat's REST API. This should NEVER be used on the client, only for server-side scripts.
+   - `react-native-purchases` - Official client-side SDK for React Native. This should be used on the client.
+   - `replit-revenuecat-v2` - SDK for RevenueCat's REST API. This should NEVER be used on the client, only for server-side scripts.
 
-    If they are not installed, use npm to install them: `$ cd /home/runner/workspace && npm install <packages>`
-
+   If they are not installed, use pnpm to install them: `$ cd /home/runner/workspace && pnpm add <packages>`
 
 2. The RevenueCat integration must be connected to the repl. This is necessary as the integration creates an authenticated client for RevenueCat accessible via a function `getUncachableRevenueCatClient`. You can do this by proposing the integration. Reference the `integrations` skill if necessary.
 
