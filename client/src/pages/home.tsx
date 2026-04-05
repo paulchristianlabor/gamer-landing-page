@@ -220,11 +220,15 @@ export default function Home() {
 
       {/* FOOTER */}
       <footer className="border-t border-white/10 py-12 bg-black/50 relative z-10">
-        <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-2xl font-black font-display tracking-tighter uppercase">
             {GAMER_NAME}
           </div>
-          
+
+          <p className="text-sm text-muted-foreground">
+            &copy; {new Date().getFullYear()} {GAMER_NAME}. All rights reserved. · Design and Built by Paul Christian Labor
+          </p>
+
           <div className="flex gap-4">
             {[
               { icon: <Facebook className="w-5 h-5 fill-current" />, color: "hover:bg-[#1877F2] hover:border-[#1877F2]" },
@@ -241,10 +245,6 @@ export default function Home() {
               </a>
             ))}
           </div>
-          
-          <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} {GAMER_NAME}. All rights reserved.
-          </p>
         </div>
       </footer>
     </div>
